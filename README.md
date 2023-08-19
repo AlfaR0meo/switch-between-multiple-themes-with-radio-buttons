@@ -1,4 +1,4 @@
-# color-mix() CSS color function + live palette of colors
+# Switching themes with radio buttons
 <img src="./img/preview-for-readme.PNG" width="50%">
 
 ## GitHub Pages
