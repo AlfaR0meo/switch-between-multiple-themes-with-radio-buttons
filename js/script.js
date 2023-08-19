@@ -49,7 +49,7 @@ function themeSwitch() {
 
     const initialCheckedThemeRadioBtn = document.querySelector(`input[type=radio][data-theme=${localStorage.getItem('theme') || initialColorScheme()}]`);
     initialCheckedThemeRadioBtn.checked = true;
-    const initialCheckedThemeName = initialCheckedThemeRadioBtn.getAttribute('data-theme');
+    const initialCheckedThemeName = initialCheckedThemeRadioBtn.dataset.theme;
     switchMetaThemeColor(initialCheckedThemeName)
 
 
