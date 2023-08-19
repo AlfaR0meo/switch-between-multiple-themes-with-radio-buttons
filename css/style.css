@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* ■■■■■ ШРИФТЫ ■■■■■■■■■■■■■■■■■■■■■■ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+/* ■■■■■ ОБНУЛЯЮЩИЕ СТИЛИ ■■■■■■■■■■■■ */
+body {
+  margin: 0;
+}
+body *, body *::before, body *::after {
+  box-sizing: border-box;
+}
+
+header, nav, main, footer, section, aside,
+img, picture, video, canvas, svg,
+label, summary, source, iframe, embed {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input, button, textarea, select {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+input[type=radio] {
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button, select, input[type=submit], input[type=file], input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+}
+
+/* ■■■■■ БАЗОВЫЕ СТИЛИ ■■■■■■■■■■■■■■■ */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-body, sans-serif);
+  font-size: var(--fs-400, 1rem);
+  font-weight: 400;
+  line-height: 1;
+  background-color: var(--color-bg, #fff);
+}
+@supports (-webkit-tap-highlight-color: transparent) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.page-wrapper {
+  min-height: 100%;
+  overflow: clip;
+}
+
+/* ■■■■■ УТИЛИТАРНЫЕ КЛАССЫ ■■■■■■■■■■ */
+.none, [none] {
+  display: none !important;
+}
+
+.scroll-lock, .lock, .no-scroll {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  appearance: none;
+}
+
+/* ■■■■■ КОНТЕЙНЕРЫ ■■■■■■■■■■■■■■■■■■ */
+.container {
+  max-width: 1000px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.container--xs {
+  max-width: 320px;
+}
+.container--sm {
+  max-width: 500px;
+}
+.container--md {
+  max-width: 800px;
+}
+.container--lg {
+  max-width: 1200px;
+}
+
+/* ■■■■■ СТИЛИ САЙТА ■■■■■■■■■■■■■■■■■ */
+:root {
+  --ff-body: "Montserrat", sans-serif;
+  --ff-heading: "Nunito", sans-serif;
+  --ff-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --color-bg: hsl(0 0% 5%);
+  --color-text: white;
+  --color-accent: hsl(210 100% 50%);
+  --fs-100: calc(var(--fs-400) * 0.625);
+  --fs-200: calc(var(--fs-400) * 0.75);
+  --fs-300: calc(var(--fs-400) * 0.875);
+  --fs-400: 1rem;
+  --fs-500: calc(var(--fs-400) * 1.25);
+  --fs-600: calc(var(--fs-400) * 1.75);
+  --fs-700: calc(var(--fs-400) * 2.5);
+  --fs-800: calc(var(--fs-400) * 3.5);
+  --fs-900: calc(var(--fs-400) * 5);
+}
+@media (max-width: 767px) {
+  :root {
+    --fs-400: .9rem;
+  }
+}
+@media (max-width: 575px) {
+  :root {
+    --fs-400: .8rem;
+  }
+}
+@media (max-width: 479px) {
+  :root {
+    --fs-400: .7rem;
+  }
+}
+
+:root:has([data-theme=light]:checked) {
+  --color-bg: hsl(0 0% 90%);
+  --color-text: hsl(0 0% 20%);
+}
+
+:root:has([data-theme=red]:checked) {
+  --color-bg: hsl(0 50% 50%);
+  --color-text: hsl(0 100% 92%);
+}
+
+:root:has([data-theme=blue]:checked) {
+  --color-bg: hsl(220 50% 50%);
+  --color-text: hsl(220 100% 92%);
+}
+
+:root:has([data-theme=dark]:checked) {
+  --color-bg: hsl(0 0% 20%);
+  --color-text: hsl(0 0% 90%);
+}
+
+.page-wrapper {
+  padding-block-end: 1rem;
+  background-color: var(--bg-color);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.themes {
+  width: fit-content;
+  margin-inline: auto;
+  margin-block-end: 1em;
+  padding: 1em 3em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  border-radius: 0 0 2em 2em;
+  box-shadow: 0 1rem 1rem hsla(0deg, 0%, 0%, 0.05);
+  background-color: #fff;
+}
+.themes > label {
+  width: 3em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.25em solid;
+  position: relative;
+  cursor: pointer;
+}
+.themes > label:nth-of-type(1) {
+  color: hsl(0deg, 0%, 80%);
+}
+.themes > label:nth-of-type(2) {
+  color: hsl(0deg, 80%, 50%);
+}
+.themes > label:nth-of-type(3) {
+  color: hsl(220deg, 80%, 50%);
+}
+.themes > label:nth-of-type(4) {
+  color: #333;
+}
+.themes > label::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 75%;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform 100ms ease-in;
+}
+.themes input[type=radio]:checked + label::after {
+  transform: translate(-50%, -50%) scale(1);
+  background-color: currentColor;
+}
+.themes input[type=radio]:focus-visible + label {
+  box-shadow: 0 0 2em color-mix(in srgb, currentColor 80%, transparent);
+}
+
+.container > * {
+  margin-block-end: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h6 {
+  font-size: var(--fs-400);
+}
+
+h5 {
+  font-size: var(--fs-500);
+}
+
+h4 {
+  font-size: var(--fs-600);
+}
+
+h3 {
+  font-size: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-800);
+}
+
+h1 {
+  font-size: var(--fs-900);
+}
+
+p {
+  font-size: var(--fs-400);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,23 @@
+/* ■■■■■ УТИЛИТАРНЫЕ КЛАССЫ ■■■■■■■■■■ */
+.none, [none] {
+    display: none !important;
+}
+
+.scroll-lock, .lock, .no-scroll {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    // z-index: -3;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    opacity: 0;
+    appearance: none;
+}
+
