@@ -1,7 +1,3 @@
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-// Here is only the mechanism for saving the selected theme to local storage
-// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
 function themeSwitch() {
 
     const themesRadioBtns = document.querySelectorAll('.themes > input[type=radio]');
